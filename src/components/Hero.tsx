@@ -51,17 +51,19 @@ export function Hero() {
               <ArrowDown className="w-4 h-4" aria-hidden="true" />
             </a>
 
-            <a
-              href={owner.resumePath}
-              download="Ganpati_Kumar_Sah_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/60 text-zinc-900 dark:text-zinc-100 hover:border-amber-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 font-medium text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-            >
-              <Download className="w-4 h-4 text-amber-600 dark:text-amber-400" aria-hidden="true" />
-              <span>Download Resume</span>
-              <span className="sr-only">(opens PDF in new tab)</span>
-            </a>
+            {Boolean(owner.resumeUrl || owner.resumePath) && (
+              <a
+                href={owner.resumeUrl || owner.resumePath}
+                download="Ganpati_Kumar_Sah_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/60 text-zinc-900 dark:text-zinc-100 hover:border-amber-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 font-medium text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              >
+                <Download className="w-4 h-4 text-amber-600 dark:text-amber-400" aria-hidden="true" />
+                <span>Download Resume</span>
+                <span className="sr-only">(opens PDF in new tab)</span>
+              </a>
+            )}
 
             <div className="flex items-center gap-2 pl-2">
               <a

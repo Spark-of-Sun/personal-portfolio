@@ -20,3 +20,19 @@ This repository contains the complete source code for Ganpati Kumar Sah's person
 - **Theme**: Dark-first with light-mode toggle, persisted in `localStorage` with zero flash of unstyled theme on initial page load.
 - **SEO & Metadata**: Complete Open Graph, Twitter card tags, JSON-LD (`Person` schema), `robots.txt`, and static `sitemap.xml`.
 - **Hosting & CI/CD**: Cloudflare Pages connected directly to GitHub (`Spark-of-Sun/personal-portfolio`). Every push to `main` triggers a production deploy; other branches generate isolated preview deploys.
+
+
+---
+
+## Environment Variables
+
+Copy `.env.example` to `.env` to configure optional build-time variables. The project builds completely statically with zero environment variables required.
+
+> **Important**: All variables prefixed with `NEXT_PUBLIC_*` are inlined into the client-side JavaScript bundle during the build and are publicly visible to every visitor. Never store secrets, private API keys, or storage credentials in them.
+
+| Variable | Default Fallback | Description |
+| :--- | :--- | :--- |
+| `NEXT_PUBLIC_SITE_URL` | `https://ganpatikrsah.site` | Canonical public site URL, used for SEO canonical tags, Open Graph, Twitter cards, sitemap, and JSON-LD structured data. |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | `contact@ganpatikrsah.site` | Contact email address displayed on the site and used for email links. |
+| `NEXT_PUBLIC_ASSETS_BASE_URL` | `""` (empty string) | Base URL for hosted static assets (cloud blob storage, CDN). Used by `assetUrl()`. The resume button stays hidden while empty. |
+| `NEXT_PUBLIC_CPAA_URL` | `""` (empty string) | Destination URL for the live CPAA project. The "Live project" button on the CPAA project card stays hidden while empty. |

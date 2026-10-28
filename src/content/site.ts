@@ -41,6 +41,7 @@ export interface SiteContent {
     summary: string[];
     heroValueStatement: string;
     resumePath: string;
+    resumeUrl: string;
   };
   skills: SkillCategory[];
   projects: Project[];
@@ -55,11 +56,19 @@ export interface SiteContent {
   };
 }
 
+export function assetUrl(path: string): string {
+  const base = (process.env.NEXT_PUBLIC_ASSETS_BASE_URL || '').trim();
+  if (!base) return '';
+  const cleanBase = base.replace(/\/+$/, '');
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${cleanBase}/${cleanPath}`;
+}
+
 export const siteContent: SiteContent = {
   owner: {
     name: "Ganpati Kumar Sah",
     headline: "AI/ML Engineer | LLMs, RAG, Python",
-    email: "contact@ganpatikrsah.site",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@ganpatikrsah.site",
     github: "https://github.com/Spark-of-Sun",
     location: "Bengaluru, Karnataka, India",
     languages: ["English", "Hindi", "Nepali"],
@@ -70,7 +79,8 @@ export const siteContent: SiteContent = {
     ],
     heroValueStatement:
       "Engineering robust LLM-powered applications, high-precision RAG systems, and autonomous agent workflows with scalable Python backends.",
-    resumePath: "/Ganpati_Kumar_Sah_Resume.pdf",
+    resumePath: assetUrl("Ganpati_Kumar_Sah_Resume.pdf"),
+    resumeUrl: assetUrl("Ganpati_Kumar_Sah_Resume.pdf"),
   },
   skills: [
     {
@@ -139,8 +149,16 @@ export const siteContent: SiteContent = {
       ],
       // TODO: Add repository URL when public
       repoUrl: "",
-      liveUrl: "https://cpaa.ganpatikrsah.site",
-      liveHost: "cpaa.ganpatikrsah.site",
+      liveUrl: process.env.NEXT_PUBLIC_CPAA_URL || "",
+      liveHost: process.env.NEXT_PUBLIC_CPAA_URL
+        ? (function (u: string) {
+            try {
+              return new URL(u).hostname;
+            } catch {
+              return "";
+            }
+          })(process.env.NEXT_PUBLIC_CPAA_URL)
+        : "",
     },
   ],
   training: [
@@ -181,8 +199,8 @@ export const siteContent: SiteContent = {
     title: "Ganpati Kumar Sah | AI/ML Engineer (LLMs, RAG, Python)",
     description:
       "AI/ML Engineer specializing in LLMs, Retrieval-Augmented Generation (RAG) systems, and agent workflows with Python and FastAPI.",
-    siteUrl: "https://ganpatikrsah.site",
-    canonical: "https://ganpatikrsah.site/",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://ganpatikrsah.site",
+    canonical: (process.env.NEXT_PUBLIC_SITE_URL || "https://ganpatikrsah.site").replace(/\/?$/, "/"),
     ogImage: "/og.png",
   },
 };
