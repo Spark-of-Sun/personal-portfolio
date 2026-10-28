@@ -41,7 +41,7 @@ export function Footer() {
             </a>
 
             <a
-              href="#hero"
+              href="/#hero"
               className="p-2 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
               aria-label="Back to top of page"
             >

@@ -6,11 +6,11 @@ import { ThemeToggle } from './ThemeToggle';
 import { siteContent } from '@/content/site';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#education', label: 'Education' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#education', label: 'Education' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export function Navbar() {
@@ -22,7 +22,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo / Monogram */}
           <a
-            href="#hero"
+            href="/"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md p-1"
             aria-label="Ganpati Kumar Sah - Back to top"
           >

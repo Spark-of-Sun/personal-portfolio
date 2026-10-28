@@ -44,7 +44,7 @@ export function Hero() {
         <MotionWrapper delay={0.2}>
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
-              href="#projects"
+              href="/#projects"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-amber-500 dark:text-zinc-950 dark:hover:bg-amber-400 font-medium text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shadow-sm"
             >
               <span>View Projects</span>
