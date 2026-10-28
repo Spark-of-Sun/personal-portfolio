@@ -11,7 +11,6 @@ out/
 # environment variables
 .env
 .env.*
-!.env.example
 
 # system / editor files
 .DS_Store
