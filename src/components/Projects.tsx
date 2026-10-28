@@ -67,7 +67,7 @@ export function Projects() {
                           <ExternalLink className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
                           <span>Live project</span>
                           {project.liveHost && (
-                            <span className="font-mono text-xs opacity-75 ml-1 hidden xs:inline sm:inline">
+                            <span className="font-mono text-xs opacity-80 ml-1">
                               ({project.liveHost})
                             </span>
                           )}
