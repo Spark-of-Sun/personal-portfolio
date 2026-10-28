@@ -1,0 +1,3 @@
+# Cloudflare Pages _redirects file
+# Note: Cloudflare Pages _redirects only supports path-based redirects, not host-based matching.
+# Apex and www redirects are handled via Cloudflare Redirect Rules in the dashboard (see README.md).
