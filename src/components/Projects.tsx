@@ -10,7 +10,7 @@ export function Projects() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <MotionWrapper delay={0.05}>
           <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-zinc-50 mb-8 tracking-tight">
-            Selected Projects
+            Capstone Projects
           </h2>
         </MotionWrapper>
 
